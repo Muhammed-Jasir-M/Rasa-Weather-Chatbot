@@ -6,82 +6,20 @@ nlu:
     - hey
     - hello
     - hi
-    - hello there
     - good morning
     - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - what's up
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
     - bye
     - goodbye
     - have a nice day
     - see you around
-    - bye bye
     - see you later
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - take care
+    - catch you later
+    - farewell
 
 - intent: bot_challenge
   examples: |
@@ -89,3 +27,59 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - are you real?
+    - are you AI?
+    - are you a machine?
+
+- intent: weather
+  examples: |
+    - what's the weather?
+    - what is the weather today?
+    - I want to know the weather today
+    - tell me the weather forecast
+    - how's the weather today?
+    - give me today's weather update
+    - is it going to rain today?
+    - how hot is it outside?
+
+- intent: weather_for_location
+  examples: |
+    - what is the weather in [Malappuram](location)?
+    - what is the weather in [New Delhi](location)?
+    - weather of [Mumbai](location)
+    - Today's weather in [Bangalore](location)
+    - [Kolkata](location) weather
+    - Tell me the weather of [Hyderabad](location)
+    - Can you tell me the weather of [London](location)?
+    - Will it rain in [New York](location) today?
+    - Show me the forecast for [Dubai](location)
+    - How cold is it in [Toronto](location)?
+    - What’s the temperature in [Paris](location) right now?
+
+- intent: city_info
+  examples: |
+    - [New Delhi](location)
+    - I want to know weather of [New Delhi](location)?
+    - [Mumbai](location) weather
+    - Tell me about [London](location)
+    - How's the weather in [Tokyo](location)?
+    - [Sydney](location) temperature
+    - I need info for [Paris](location)
+    - Weather in [Berlin](location)
+    - [Beijing](location) forecast
+    - Will it snow in [Moscow](location)?
+    - Weather update for [Seoul](location)
+    - What's the weather like in [Istanbul](location)?
+
+- intent: thanks
+  examples: | 
+    - thanks
+    - thank you
+    - OK
+    - much appreciated
+    - thanks a lot
+    - I appreciate it
+    - cheers
+    - thank you so much
+    - many thanks
+    - big thanks

@@ -3,32 +3,53 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
+  - weather
+  - weather_for_location
+  - city_info
+  - thanks
+
+entities:
+  - location
+
+slots:
+  location:
+    type: text
+    influence_conversation: true
+    mappings: 
+    - type: from_entity
+      entity: location
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Hey there! How can I assist you today?"
+  - text: "Hello! Need a weather update?"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Goodbye! Stay safe. ☀️"
+  - text: "See you later! Don’t forget to check the weather. ⛅"
+  - text: "Bye! Have a fantastic day ahead!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I’m a weather assistant bot! ⛅ Ask me about the forecast."
+
+  utter_ask_location:
+  - text: "Which city do you want the weather for? 🌍"
+  - text: "Can you tell me the city name for the forecast?"
+
+  utter_getting_weather:
+  - text: "Sure! Let me check the weather in {location}... 🌦️"
+  - text: "Looking up the latest forecast for {location}. Give me a sec! ⏳"
+  - text: "Fetching the weather details for {location}... Hang tight! ⏳"
+
+  utter_thanks:
+  - text: "You're welcome! 😊"
+  - text: "Happy to help!"
+  - text: "Anytime! Let me know if you need more weather info."
 
 session_config:
-  session_expiration_time: 60
+  session_expiration_time: 300
   carry_over_slots_to_new_session: true
+
+actions:
+  - action_get_weather
