@@ -32,6 +32,23 @@ stories:
   - intent: thanks
   - action: utter_thanks
 
+- story: name
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+  - action: action_greet_name
+
+- story: capabilities
+  steps:
+  - intent: capabilities
+  - action: utter_capabilities
+
+- story: how_are_you
+  steps:
+  - intent: how_are_you
+  - action: utter_iam_fine
+
 
 
 

@@ -9,6 +9,22 @@ import requests # For HTTP request
 
 load_dotenv() # Load env variables
 
+class ActionGreetName(Action):
+
+    def name(self) -> Text:
+        return "action_greet_name"
+
+    def run(self, dispatcher,tracker,domain):
+
+        name = tracker.get_slot('PERSON')  # Fetch the PERSON slot
+
+        if name: 
+            dispatcher.utter_message(text=f"Nice to meet you, {name}!")
+            return [SlotSet("PERSON", None)] 
+        else:  
+            dispatcher.utter_message(text="I see, carry on!")
+            return []
+
 # Action to fetch Weather Info for given loc
 class ActionCheckWeather(Action):
     

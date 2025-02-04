@@ -8,9 +8,13 @@ intents:
   - weather_for_location
   - city_info
   - thanks
+  - name
+  - how_are_you
+  - capabilities
 
 entities:
   - location
+  - person
 
 slots:
   location:
@@ -19,11 +23,20 @@ slots:
     mappings: 
     - type: from_entity
       entity: location
+  person: 
+    type: text
+    influence_conversation: true
+    mappings: 
+    - type: from_entity
+      entity: person
+
 
 responses:
   utter_greet:
   - text: "Hey there! How can I assist you today?"
   - text: "Hello! Need a weather update?"
+  - text: Hi! I'm Weather Chatbot, what can I do for you?
+  - text: Hello there, I'm Weather Chatbot.
 
   utter_goodbye:
   - text: "Goodbye! Stay safe. ☀️"
@@ -31,8 +44,8 @@ responses:
   - text: "Bye! Have a fantastic day ahead!"
 
   utter_iamabot:
-  - text: "I’m a weather assistant bot! ⛅ Ask me about the forecast."
-
+  - text: "I’m a weather assistant bot! ⛅ Ask me about the weather."
+  - text: "I’m a weather chatbot! ⛅ Ask me about the weather."
   utter_ask_location:
   - text: "Which city do you want the weather for? 🌍"
   - text: "Can you tell me the city name for the forecast?"
@@ -47,9 +60,17 @@ responses:
   - text: "Happy to help!"
   - text: "Anytime! Let me know if you need more weather info."
 
+  utter_capabilities:
+  - text: "I can tell the current weather and forecast of any location."
+
+  utter_iam_fine:
+  - text: "I'm well thanks. I can forecast the weather for you." 
+  - text: "I'm good, thanks."
+
 session_config:
   session_expiration_time: 300
   carry_over_slots_to_new_session: true
 
 actions:
   - action_get_weather
+  - action_greet_name
