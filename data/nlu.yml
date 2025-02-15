@@ -56,12 +56,12 @@ nlu:
     - Will it rain in [New York](location) today?
     - Show me the forecast for [Dubai](location)
     - How cold is it in [Toronto](location)?
-    - What’s the temperature in [Paris](location) right now?
+    - What's the temperature in [Paris](location) right now?
 
 - intent: city_info
   examples: |
     - [New Delhi](location)
-    - I want to know weather of [New Delhi](location)?
+    - I want to know weather of [New Delhi](location)
     - [Mumbai](location) weather
     - Tell me about [London](location)
     - How's the weather in [Tokyo](location)?
@@ -74,7 +74,7 @@ nlu:
     - What's the weather like in [Istanbul](location)?
 
 - intent: thanks
-  examples: | 
+  examples: |
     - thanks
     - thank you
     - OK
@@ -89,13 +89,13 @@ nlu:
 - intent: name
   examples: |
     - My name is [John](person)
-    - [Sonu](person) 
-    - Hi, Iam [John](person)
+    - [Sonu](person)
+    - Hi, I am [John](person)
     - Hi, My name is [John](person)
-    - I am [Jack](PERSON)
-    - Call me [Nadhu](PERSON)
-    - My name is [Raifu](PERSON)
-    - Myself [Abhinav](PERSON) 
+    - I am [Jack](person)
+    - Call me [Nadhu](person)
+    - My name is [Raifu](person)
+    - Myself [Abhinav](person)
 
 - intent: how_are_you
   examples: |
@@ -116,5 +116,22 @@ nlu:
     - help
     - can you help me
     - how can you help me?
-    - I need your help
 
+- intent: check_air_quality
+  examples: |
+    - what's the air quality
+    - air quality in [London](location)
+    - how's the air in [New York](location)
+    - check air quality for [Tokyo](location)
+    - is the air clean in [Paris](location)
+    - pollution levels in [Berlin](location)
+    - what's the air quality index in [Mumbai](location)
+    - how polluted is [Sydney](location)
+    - air quality check for [Dubai](location)
+    - what's the AQI in [Singapore](location)
+    - how's the air pollution today
+    - is it safe to go outside
+    - should I wear a mask today
+    - what's the pollution level
+    - air quality status
+    - check pollution

@@ -1,55 +1,69 @@
-version: "3.1"
-
 stories:
-
 - story: weather query with location
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: weather_for_location
-  - action: utter_getting_weather
-  - action: action_get_weather
-  - intent: thanks
-  - action: utter_thanks
+    - intent: greet
+    - action: utter_greet
+    - intent: weather_for_location
+    - action: utter_getting_weather
+    - action: action_get_weather
+    - intent: thanks
+    - action: utter_thanks
 
 - story: direct city weather request
   steps:
-  - intent: city_info
-  - action: utter_getting_weather
-  - action: action_get_weather
-  - intent: thanks
-  - action: utter_thanks
+    - intent: city_info
+    - action: utter_getting_weather
+    - action: action_get_weather
+    - intent: thanks
+    - action: utter_thanks
 
 - story: weather query without location
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: weather
-  - action: utter_ask_location
-  - intent: city_info
-  - action: utter_getting_weather
-  - action: action_get_weather
-  - intent: thanks
-  - action: utter_thanks
+    - intent: greet
+    - action: utter_greet
+    - intent: weather
+    - action: utter_ask_location
+    - intent: city_info
+    - action: utter_getting_weather
+    - action: action_get_weather
+    - intent: thanks
+    - action: utter_thanks
 
 - story: name
-  steps: 
-  - intent: greet
-  - action: utter_greet
-  - intent: name
-  - action: action_greet_name
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: name
+    - action: action_greet_name
 
 - story: capabilities
   steps:
-  - intent: capabilities
-  - action: utter_capabilities
+    - intent: capabilities
+    - action: utter_capabilities
 
 - story: how_are_you
   steps:
-  - intent: how_are_you
-  - action: utter_iam_fine
+    - intent: how_are_you
+    - action: utter_iam_fine
 
+- story: check air quality with location
+  steps:
+    - intent: check_air_quality
+      entities:
+        - location: "London"
+    - action: utter_checking_air_quality
+    - action: action_get_air_quality
+    - intent: thanks
+    - action: utter_thanks
 
-
-
-  
+- story: check air quality without location
+  steps:
+    - intent: check_air_quality
+    - action: utter_ask_air_location
+    - intent: city_info
+      entities:
+        - location: "London"
+    - action: utter_checking_air_quality
+    - action: action_get_air_quality
+    - intent: thanks
+    - action: utter_thanks

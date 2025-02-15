@@ -11,6 +11,7 @@ intents:
   - name
   - how_are_you
   - capabilities
+  - check_air_quality
 
 entities:
   - location
@@ -30,42 +31,52 @@ slots:
     - type: from_entity
       entity: person
 
-
 responses:
   utter_greet:
-  - text: "Hey there! How can I assist you today?"
-  - text: "Hello! Need a weather update?"
-  - text: Hi! I'm Weather Chatbot, what can I do for you?
-  - text: Hello there, I'm Weather Chatbot.
-
+    - text: "Hey there! How can I assist you today?"
+    - text: "Hello! Need a weather update?"
+    - text: "Hi! I'm Weather Chatbot, what can I do for you?"
+    - text: "Hello there, I'm Weather Chatbot."
+  
   utter_goodbye:
-  - text: "Goodbye! Stay safe. ☀️"
-  - text: "See you later! Don’t forget to check the weather. ⛅"
-  - text: "Bye! Have a fantastic day ahead!"
-
+    - text: "Goodbye! Stay safe. ☀️"
+    - text: "See you later! Don't forget to check the weather. ⛅"
+    - text: "Bye! Have a fantastic day ahead!"
+  
   utter_iamabot:
-  - text: "I’m a weather assistant bot! ⛅ Ask me about the weather."
-  - text: "I’m a weather chatbot! ⛅ Ask me about the weather."
+    - text: "I'm a weather assistant bot! ⛅ Ask me about the weather."
+    - text: "I'm a weather chatbot! ⛅ Ask me about the weather."
+  
   utter_ask_location:
-  - text: "Which city do you want the weather for? 🌍"
-  - text: "Can you tell me the city name for the forecast?"
-
+    - text: "Which city do you want the weather for? 🌍"
+    - text: "Can you tell me the city name for the forecast?"
+  
   utter_getting_weather:
-  - text: "Sure! Let me check the weather in {location}... 🌦️"
-  - text: "Looking up the latest forecast for {location}. Give me a sec! ⏳"
-  - text: "Fetching the weather details for {location}... Hang tight! ⏳"
+    - text: "Sure! Let me check the weather in {location}... 🌦️"
+    - text: "Looking up the latest forecast for {location}. Give me a sec! ⏳"
+    - text: "Fetching the weather details for {location}... Hang tight! ⏳"
 
+  utter_ask_air_location:
+    - text: "Which city would you like to check the air quality for? 🌍"
+    - text: "Please specify the city name for the air quality check."
+    - text: "I can check the air quality for any city. Which one would you like to know about?"
+
+  utter_checking_air_quality:
+    - text: "Checking the air quality in {location}... 🌬️"
+    - text: "Let me fetch the latest air quality data for {location}..."
+    - text: "Getting real-time air quality information for {location}..."
+  
   utter_thanks:
-  - text: "You're welcome! 😊"
-  - text: "Happy to help!"
-  - text: "Anytime! Let me know if you need more weather info."
-
+    - text: "You're welcome! 😊"
+    - text: "Happy to help!"
+    - text: "Anytime! Let me know if you need more weather info."
+  
   utter_capabilities:
-  - text: "I can tell the current weather and forecast of any location."
-
+    - text: "I can tell the current weather and forecast of any location."
+  
   utter_iam_fine:
-  - text: "I'm well thanks. I can forecast the weather for you." 
-  - text: "I'm good, thanks."
+    - text: "I'm well thanks. I can forecast the weather for you."
+    - text: "I'm good, thanks."
 
 session_config:
   session_expiration_time: 300
@@ -74,3 +85,4 @@ session_config:
 actions:
   - action_get_weather
   - action_greet_name
+  - action_get_air_quality
